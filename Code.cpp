@@ -1,4 +1,4 @@
-Hi
-Hello
-ayesha
-hahah
+#include<iostrem>
+using namepspace std;
+{
+
