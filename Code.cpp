@@ -14,5 +14,16 @@ egde(int sour,int dest,int btw)
 source=sour;
 destination=dest;
 bandwidth=btw;
+next=nullptr;
 }
 };
+struct node{
+int id;
+string info;
+egde* egdelist;
+node()
+{
+egdelist=nullptr;
+}
+};
+
