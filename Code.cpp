@@ -26,4 +26,12 @@ node()
 egdelist=nullptr;
 }
 };
+class networkgraph{
+private:
+node nodes[MAX_NODES];
+int nodecount;
+bool visited[MAX_NODES];
+int path[MAX_NODES];
+
+
 
