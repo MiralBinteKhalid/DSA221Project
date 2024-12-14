@@ -32,6 +32,29 @@ node nodes[MAX_NODES];
 int nodecount;
 bool visited[MAX_NODES];
 int path[MAX_NODES];
+int pathlength;
+
+public:
+networkgraph(){
+nodecount=0;
+pathlength=0;
+for(int i=0;i<MAX_NODES;i++)
+{
+visited[i]=false;
+nodes[i].edgelist=nullptr;
+}
+}
+int calculatenodetraffic(int nodeid)
+{
+int totaltraffic=0;
+egde*current=nodes[nodeid].egdelist;
+while(current!=nullptr)
+{
+totaltraffic+=current->bandwidth;
+current=current->next;
+}
+return totaltraffic;
+}
 
 
 
