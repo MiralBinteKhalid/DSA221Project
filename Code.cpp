@@ -73,6 +73,16 @@ void merge(vector<SortedEdge>& edges, int left, int mid, int right) {
  for (int i = 0; i < n2; i++)
             R[i] = edges[mid + 1 + i];
  int i = 0, j = 0, k = left;
+ while (i < n1 && j < n2) {
+ if (L[i].bandwidth <= R[j].bandwidth) {
+                edges[k] = L[i];
+                i++;
+            } else {
+                edges[k] = R[j];
+                j++;
+            }
+            k++;
+        }
 
 
 }
