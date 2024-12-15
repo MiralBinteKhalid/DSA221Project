@@ -59,6 +59,11 @@ current=current->next;
 }
 return totaltraffic;
 }
+ struct SortedEdge {
+        int source;
+        int destination;
+        int bandwidth;
+    };
 
 
 
