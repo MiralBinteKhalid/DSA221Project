@@ -68,6 +68,10 @@ void merge(vector<SortedEdge>& edges, int left, int mid, int right) {
   int n1 = mid - left + 1;
   int n2 = right - mid;
  vector<SortedEdge> L(n1), R(n2);
+ for (int i = 0; i < n1; i++)
+            L[i] = edges[left + i];
+        for (int i = 0; i < n2; i++)
+            R[i] = edges[mid + 1 + i];
 
 
 }
