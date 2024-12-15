@@ -67,6 +67,8 @@ return totaltraffic;
 void merge(vector<SortedEdge>& edges, int left, int mid, int right) {
   int n1 = mid - left + 1;
   int n2 = right - mid;
+ vector<SortedEdge> L(n1), R(n2);
+
 
 }
 
