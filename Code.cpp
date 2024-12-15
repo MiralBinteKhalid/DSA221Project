@@ -64,6 +64,6 @@ return totaltraffic;
         int destination;
         int bandwidth;
     };
-
+void merge(vector<SortedEdge>& edges, int left, int mid, int right) {}
 
 
