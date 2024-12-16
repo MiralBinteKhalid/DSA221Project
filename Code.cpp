@@ -121,6 +121,10 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         for (const auto& e : edges) {
             cout << "Source: " << e.source << ", Destination: " << e.destination << ", Bandwidth: " << e.bandwidth << endl;
         }
+       cout << "Edges sorted by bandwidth:\n";
+        for (const auto& e : edges) {
+            cout << "Source: " << e.source << ", Destination: " << e.destination << ", Bandwidth: " << e.bandwidth << endl;
+        }
        
     }
 
