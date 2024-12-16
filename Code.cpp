@@ -53,9 +53,12 @@ nodes[i].edgelist=nullptr;
 void addnode(int id,const string &info)
 {
  if (nodecount>=MAX_NODE){
-cout<<"node liit reached"<<endl;
+cout<<"node limit reached"<<endl;
   return ;
  }
+ nodes[MAX_NODES].id=id;
+ nodes[nodeount].info=info;
+ nodecount++;
  
 int calculatenodetraffic(int nodeid)
 {
