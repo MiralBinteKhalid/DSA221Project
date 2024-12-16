@@ -128,5 +128,13 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
        
     }
 
+
+int main(){
+
+
+
+ return 0;
+}
+
         
     
