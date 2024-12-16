@@ -85,4 +85,9 @@ void merge(vector<SortedEdge>& edges, int left, int mid, int right) {
             }
             k++;
         }
+  while (i < n1) {
+            edges[k] = L[i];
+            i++;
+            k++;
+        }
 }
