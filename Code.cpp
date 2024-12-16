@@ -59,6 +59,10 @@ cout<<"node limit reached"<<endl;
  nodes[MAX_NODES].id=id;
  nodes[nodeount].info=info;
  nodecount++;
+}
+void addegde(int sour,int dest,int bandwidth)
+{
+ if(sour>=nodecount||dest>=nodecount)
  
 int calculatenodetraffic(int nodeid)
 {
