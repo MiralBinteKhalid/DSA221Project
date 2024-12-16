@@ -1,4 +1,3 @@
-
 #include<iostream>
 #include<fstream>
 #include<vector>
@@ -22,7 +21,8 @@ bandwidth=btw;
 next=nullptr;
 }
 };
-struct node{
+struct node
+{
 int id;
 string info;
 egde* egdelist;
@@ -31,7 +31,8 @@ node()
 egdelist=nullptr;
 }
 };
-class networkgraph{
+class networkgraph
+{
 private:
 node nodes[MAX_NODES];
 int nodecount;
@@ -84,8 +85,4 @@ void merge(vector<SortedEdge>& edges, int left, int mid, int right) {
             }
             k++;
         }
-
-
 }
-
-
