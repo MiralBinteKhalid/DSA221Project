@@ -68,7 +68,8 @@ cout<<"invalid node";
   return;
  }
  egde*newegde=new egde(sour,dest,bandwith);
- 
+ newegde->next=nodes[sour].edgelist=newegde;
+}
 int calculatenodetraffic(int nodeid)
 {
 int totaltraffic=0;
