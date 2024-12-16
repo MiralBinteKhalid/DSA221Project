@@ -63,7 +63,10 @@ cout<<"node limit reached"<<endl;
 void addegde(int sour,int dest,int bandwidth)
 {
  if(sour>=nodecount||dest>=nodecount)
- 
+ {
+cout<<"invalid node";
+  return;
+ }
 int calculatenodetraffic(int nodeid)
 {
 int totaltraffic=0;
