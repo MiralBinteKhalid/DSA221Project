@@ -99,6 +99,9 @@ void merge(vector<SortedEdge>& edges, int left, int mid, int right) {
 }
 void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         if (left < right) {
-           
-        }
+            int mid = left + (right - left) / 2;
+            
+        
+    }
+        
     }
