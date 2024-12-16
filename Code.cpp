@@ -50,6 +50,8 @@ visited[i]=false;
 nodes[i].edgelist=nullptr;
 }
 }
+void addnode(int id,const string &info)
+{if (nodecount>=MAX_NODE)
 int calculatenodetraffic(int nodeid)
 {
 int totaltraffic=0;
