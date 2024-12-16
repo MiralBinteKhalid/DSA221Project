@@ -67,6 +67,8 @@ void addegde(int sour,int dest,int bandwidth)
 cout<<"invalid node";
   return;
  }
+ egde*newegde=new egde(sour,dest,bandwith);
+ 
 int calculatenodetraffic(int nodeid)
 {
 int totaltraffic=0;
