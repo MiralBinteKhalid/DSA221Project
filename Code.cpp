@@ -8,7 +8,8 @@ using namepspace std;
 const int MAX_NODES=1000;
 const int MAX_EDGES=1000;
 //making edges in linkedlist 
-struct egde{
+struct egde
+{
 int source ;
 int destination;
 int bandwidth;
