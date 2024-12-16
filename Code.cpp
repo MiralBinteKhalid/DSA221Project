@@ -105,6 +105,18 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
             merge(edges, left, mid, right);
           
         
+    }}
+ void sortEdgesByBandwidth() {
+        vector<SortedEdge> edges;
+        for (int i = 0; i < nodecount; i++) {
+            edge* current = nodes[i].edgelist;
+            while (current != nullptr) {
+                edges.push_back({current->source, current->destination, current->bandwidth});
+                current = current->next;
+            }
+        }
+       
     }
+
         
-    }
+    
