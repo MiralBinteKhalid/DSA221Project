@@ -160,6 +160,11 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
             edge* current = nodes[i].edgelist;
             while (current != nullptr) {
                 file << current->source << " " << current->destination << " " << current->bandwidth << endl;
+             current = current->next;
+            }
+        }
+        file.close();
+        cout << "Graph saved to file successfully!" << endl;
                 
          
         
