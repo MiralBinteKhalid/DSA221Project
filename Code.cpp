@@ -188,10 +188,8 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
             newEdge->next = nodes[source].edgelist;
             nodes[source].edgelist = newEdge;
         }
-        
-
-
-       
+    file.close();
+        cout << "Graph loaded from file successfully!" << endl;
         
     }
 
