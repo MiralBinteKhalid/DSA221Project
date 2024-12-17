@@ -158,6 +158,9 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         for (int i = 0; i < nodecount; i++) {
           file << nodes[i].id << " " << nodes[i].info << endl;
             edge* current = nodes[i].edgelist;
+            while (current != nullptr) {
+                file << current->source << " " << current->destination << " " << current->bandwidth << endl;
+                
          
         
     }
