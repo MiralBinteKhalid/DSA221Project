@@ -166,6 +166,15 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         file.close();
         cout << "Graph saved to file successfully!" << endl;
     }
+ void loadGraphFromFile(const string& filename) {
+        ifstream file(filename);
+        if (!file.is_open()) {
+            cerr << "Error opening file!" << endl;
+            return;
+        }
+
+        
+    }
 
 void dfs(int startNode){
 if(startNode<0 || startNode>=numNodes){
