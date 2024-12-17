@@ -154,6 +154,10 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
        cerr << "Error opening file!" << endl;
             return;
         }
+      file << nodecount << endl;
+        for (int i = 0; i < nodecount; i++) {
+           
+           
 
        
       
