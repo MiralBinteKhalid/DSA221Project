@@ -156,11 +156,9 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         }
       file << nodecount << endl;
         for (int i = 0; i < nodecount; i++) {
-           
-           
-
-       
-      
+          file << nodes[i].id << " " << nodes[i].info << endl;
+            edge* current = nodes[i].edgelist;
+         
         
     }
 
