@@ -165,9 +165,6 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         }
         file.close();
         cout << "Graph saved to file successfully!" << endl;
-                
-         
-        
     }
 
 
