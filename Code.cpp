@@ -149,7 +149,8 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
     }
    // File handling: Save and load graph structure
     void saveGraphToFile(const string& filename) {
-      
+       ofstream file(filename);
+        
     }
 
 
