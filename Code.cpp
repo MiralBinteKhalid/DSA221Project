@@ -167,6 +167,20 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         cout << "Graph saved to file successfully!" << endl;
     }
 
+void dfs(int startNode){
+if(startNode<0 || startNode>=numNodes){
+throw invalid_argument("Start Node does not exist.")
+}
+
+ bool*visited=new bool[numNodes];
+ for(int i=0;i<numNodes;++i){
+  visited[i]=false;
+ }
+ 
+
+ 
+}
+
 void adminMenu(networkgraph &graph){
 int choice;
 do{
