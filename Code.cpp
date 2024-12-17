@@ -182,6 +182,15 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
             nodes[i].edgelist = nullptr;
         }
 
+   int source, destination, bandwidth;
+        while (file >> source >> destination >> bandwidth) {
+            edge* newEdge = new edge(source, destination, bandwidth);
+            newEdge->next = nodes[source].edgelist;
+            nodes[source].edgelist = newEdge;
+        }
+        
+
+
        
         
     }
