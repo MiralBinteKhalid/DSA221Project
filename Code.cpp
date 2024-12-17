@@ -151,7 +151,11 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
     void saveGraphToFile(const string& filename) {
        ofstream file(filename);
      if (!file.is_open()) {
-           
+       cerr << "Error opening file!" << endl;
+            return;
+        }
+
+       
       
         
     }
