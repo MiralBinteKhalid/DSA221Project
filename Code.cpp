@@ -167,6 +167,22 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         cout << "Graph saved to file successfully!" << endl;
     }
 
+void adminMenu(networkgraph &graph){
+int choice;
+do{
+ cout<<"Admin menu:\n"
+  <<"1.Add node\n"
+  <<"2.Delete node\n"
+  <<"3.Switch to viewer menu\n"
+  <<"4.Exit\n"
+  <<"Enter choice:\n";
+ if(!(cin>>choice)){
+  cin.clear();
+  cout<<"Invalid input!\n";
+  continue;
+ }
+}
+
 
 int main(){
 
