@@ -198,6 +198,11 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         cout << "Graph loaded from file successfully!" << endl;
         
     }
+void exportToDOT(const string& filename) {
+        ofstream file(filename);
+        
+    }
+
 
 
 
