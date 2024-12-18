@@ -193,6 +193,18 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         
     }
 
+DFSdisplay(int startNode,bool visited[]){
+ visited[node]=true;
+ cout<<node<<" ";
+
+ for(int i=0;i<MAX_NODES;i++){
+if(adjacencymatrix[node][i] && !visited[i]){
+dfsdisplay(i,visited);
+}
+ }
+
+}
+
 void dfs(int startNode){
 if(startNode<0 || startNode>=numNodes){
 throw invalid_argument("Start Node does not exist.")
@@ -202,7 +214,9 @@ throw invalid_argument("Start Node does not exist.")
  for(int i=0;i<numNodes;++i){
   visited[i]=false;
  }
- 
+ cout<<"DFS starting from Node "<<startNode<<":";
+ DFSdisplay(startNode,visited)
+ cout<<endl;
 
  
 }
