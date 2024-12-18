@@ -211,7 +211,8 @@ void exportToDOT(const string& filename) {
          while (current != nullptr) {
            file << "  " << current->source << " -> " << current->destination
             << " [label=\"" << current->bandwidth << "\"];\n";
-                            
+            current = current->next;
+                               
          
             
         
