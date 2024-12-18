@@ -57,13 +57,14 @@ nodes[i].edgelist=nullptr;
 }
 void addnode(int id,const string &info)
 {
- if (nodecount>=MAX_NODE){
-cout<<"node limit reached"<<endl;
+ if (nodecount>=MAX_NODE || nodecount<0){
+throw invalid_argument("Node ID out of range");
   return ;
  }
  nodes[MAX_NODES].id=id;
  nodes[nodeount].info=info;
  nodecount++;
+ cout<<"Node ID successfully added!";
 }
 void addegde(int sour,int dest,int bandwidth)
 {
