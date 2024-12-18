@@ -236,6 +236,7 @@ do{
   <<"2.Delete node\n"
   <<"3.Switch to viewer menu\n"
   <<"4.Exit\n"
+  <<"5.sort nodes\n"
   <<"Enter choice:\n";
  if(!(cin>>choice)){
   cin.clear();
