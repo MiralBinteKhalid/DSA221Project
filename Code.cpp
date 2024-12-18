@@ -200,7 +200,8 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
     }
 void exportToDOT(const string& filename) {
         ofstream file(filename);
-        
+       if (!file.is_open()) {
+           
     }
 
 
