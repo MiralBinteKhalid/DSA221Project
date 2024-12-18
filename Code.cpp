@@ -205,7 +205,9 @@ void exportToDOT(const string& filename) {
          return;
         }
 
-       
+        file << "digraph Graph {\n";
+        for (int i = 0; i < nodecount; i++) {
+            
         
          
              
