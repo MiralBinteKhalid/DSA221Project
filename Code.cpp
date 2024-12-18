@@ -39,9 +39,14 @@ int nodecount;
 bool visited[MAX_NODES];
 int path[MAX_NODES];
 int pathlength;
+int **adjacencymatrix;
 
 public:
 networkgraph(){
+ adjacencymatrix=new int*[MAX_NODES];
+ for(int i=0;i<MAX_NODES;i++){
+adjacencymatrix[i]=new int[MAX_NODES];
+ }
 nodecount=0;
 pathlength=0;
 for(int i=0;i<MAX_NODES;i++)
@@ -192,6 +197,9 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         cout << "Graph loaded from file successfully!" << endl;
         
     }
+
+
+
 
 DFSdisplay(int startNode,bool visited[]){
  visited[node]=true;
