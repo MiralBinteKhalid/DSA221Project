@@ -246,6 +246,20 @@ do{
  }
 }
 
+ void viewer menu(networkgraph &graph){
+int choice;
+ do{
+cout<<"viewer menu\n"
+ <<"1.Find Best bandwidth\n"
+ <<"2.display graph\n"
+ <<"3.Perform dfs\n"
+ <<"4.Switch to admin menu\n"
+ <<"5.Sort Nodes\n"
+ <<"6.Exit\n
+ <<"Enter choice:\n";
+ }
+}
+
 
 int main(){
 
