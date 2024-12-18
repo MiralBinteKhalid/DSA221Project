@@ -70,7 +70,7 @@ void addegde(int sour,int dest,int bandwidth)
 {
  if(sour>=nodecount||dest>=nodecount)
  {
-cout<<"invalid node";
+throw invalid_argument("Invalid Node");
   return;
  }
  egde*newegde=new egde(sour,dest,bandwith);
