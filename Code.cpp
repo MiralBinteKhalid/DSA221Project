@@ -218,16 +218,14 @@ void dfs(int startNode){
 if(startNode<0 || startNode>=numNodes){
 throw invalid_argument("Start Node does not exist.")
 }
-
  bool*visited=new bool[numNodes];
  for(int i=0;i<numNodes;++i){
   visited[i]=false;
  }
+ 
  cout<<"DFS starting from Node "<<startNode<<":";
  DFSdisplay(startNode,visited)
  cout<<endl;
-
- 
 }
 
 void adminMenu(networkgraph &graph){
