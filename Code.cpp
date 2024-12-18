@@ -209,7 +209,8 @@ void exportToDOT(const string& filename) {
         for (int i = 0; i < nodecount; i++) {
          edge* current = nodes[i].edgelist;
          while (current != nullptr) {
-                
+           file << "  " << current->source << " -> " << current->destination
+                          
          
             
         
