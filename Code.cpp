@@ -1,4 +1,12 @@
-
+#include<iostream>
+#include<vector>
+#include<queue>
+#include<stack>
+#include<fstream>
+using namepspace std;
+const int MAX_NODES=1000;
+const int MAX_EDGES=1000;
+//making edges in linkedlist 
 struct egde
 {
 int source ;
