@@ -120,7 +120,7 @@ void merge(vector<SortedEdge>& edges, int left, int mid, int right) {
             edges[k] = R[j];
             j++;
             k++;
-        }
+ }
     }
 }
 void mergeSort(vector<SortedEdge>& edges, int left, int right) {
