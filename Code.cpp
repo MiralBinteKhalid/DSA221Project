@@ -210,7 +210,8 @@ void exportToDOT(const string& filename) {
          edge* current = nodes[i].edgelist;
          while (current != nullptr) {
            file << "  " << current->source << " -> " << current->destination
-                          
+            << " [label=\"" << current->bandwidth << "\"];\n";
+                            
          
             
         
