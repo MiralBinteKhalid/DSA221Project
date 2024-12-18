@@ -258,6 +258,7 @@ cout<<"viewer menu\n"
  <<"6.Exit\n
  <<"Enter choice:\n";
  }
+  
 }
 
 
