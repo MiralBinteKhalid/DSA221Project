@@ -215,8 +215,8 @@ void exportToDOT(const string& filename) {
              }
         }
         file << "}";
-                          
-         
+         file.close();
+      
             
         
          
