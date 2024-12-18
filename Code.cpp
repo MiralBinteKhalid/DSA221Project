@@ -217,7 +217,7 @@ void exportToDOT(const string& filename) {
         file << "}";
          file.close();
       
-            
+            cout << "Graph exported to DOT file successfully!" << endl;   
         
          
              
