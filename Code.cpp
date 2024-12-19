@@ -371,7 +371,21 @@ do{
             case 2:
                 graph.updateEdgeWeights();
                 break;
-           
+         
+            case 3:
+                graph.addNode();
+                break;
+            case 4:
+                graph.displayGraph();
+                break;
+            case 5:
+                cout << "Exiting Admin Menu..." << endl;
+                break;
+            default:
+                cerr << "Invalid choice! Please enter a number between 1 and 5." << endl;
+        }
+    } while (choice != 5);
+}
             default:
                 cerr << "Invalid choice! Please enter a number between 1 and 5." << endl;
         }
