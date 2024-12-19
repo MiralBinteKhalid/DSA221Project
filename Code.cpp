@@ -51,9 +51,9 @@ void allocate_bandwidth(vector<Request>& requests, int total_bandwidth) {
     }
 
     if (total_bandwidth > 0) {
-        cout << "Remaining bandwidth: " << total_bandwidth << " units.\n";
+        cout << "Remaining bandwidth: " << total_bandwidth << " units\n";
     } else {
-        cout << "All bandwidth allocated.\n";
+        cout << "All bandwidth allocated!\n";
     }
 }
 
