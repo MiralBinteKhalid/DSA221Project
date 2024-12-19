@@ -273,6 +273,7 @@ void exportToDOT(const string& filename) {
         }
            
     }
+
 void updateEdgeWeights() {
         // logic to update edge weights randomly
         random_device rd;
@@ -353,6 +354,29 @@ do{
   cout<<"Invalid input!\n";
   continue;
  }
+     switch (choice) {
+            case 1: {
+                int u, v, w;
+                cout << "Enter nodes (u, v) and weight: ";
+                cin >> u >> v >> w;
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    cerr << "Invalid input! Please enter valid integers." << endl;
+                    continue;
+                }
+                graph.addEdge(u, v, w);
+                break;
+            }
+            case 2:
+                graph.updateEdgeWeights();
+                break;
+           
+            default:
+                cerr << "Invalid choice! Please enter a number between 1 and 5." << endl;
+        }
+    } while (choice != 5);
+}
 }
 
  void viewer menu(networkgraph &graph){
