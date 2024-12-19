@@ -222,6 +222,11 @@ void exportToDOT(const string& filename) {
          
              
     }
+// Search for nodes based on ID or info
+    void searchNode(int nodeId, const string& nodeInfo = "") {
+        bool found = false;
+       
+    }
 
 
 
