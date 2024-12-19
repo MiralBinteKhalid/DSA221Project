@@ -194,6 +194,7 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         }
        
     }
+
    // File handling: Save and load graph structure
     void saveGraphToFile(const string& filename) {
        ofstream file(filename);
@@ -213,6 +214,7 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         file.close();
         cout << "Graph saved to file successfully!" << endl;
     }
+
  void loadGraphFromFile(const string& filename) {
         ifstream file(filename);
         if (!file.is_open()) {
@@ -239,6 +241,8 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
         cout << "Graph loaded from file successfully!" << endl;
         
     }
+
+
 void exportToDOT(const string& filename) {
         ofstream file(filename);
        if (!file.is_open()) {
@@ -279,6 +283,7 @@ void exportToDOT(const string& filename) {
            
     }
 
+//adding weights to edges
 void updateEdgeWeights() {
         // logic to update edge weights randomly
         random_device rd;
@@ -303,6 +308,7 @@ int findHighestWeightEdgeInCluster(const vector<int>& cluster) {
         }
         return maxWeight;
     }
+//getting min node value for delete function
 Location* getMinValueNode(Location* node) {
         Location* current = node;
         while (current->left)
