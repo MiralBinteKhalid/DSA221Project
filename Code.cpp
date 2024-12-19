@@ -226,6 +226,8 @@ void exportToDOT(const string& filename) {
     void searchNode(int nodeId, const string& nodeInfo = "") {
         bool found = false;
         for (int i = 0; i < nodecount; i++) {
+          if (nodes[i].id == nodeId || (!nodeInfo.empty() && nodes[i].info.find(nodeInfo) != string::npos)) {
+                
            
     }
 
