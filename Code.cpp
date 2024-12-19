@@ -28,6 +28,27 @@ void allocate_bandwidth(vector<Request>& requests, int total_bandwidth) {
     for (const auto& req : requests) {
         pq.push(req);
     }
+     cout << "Allocating bandwidth:\n";
+    while (!pq.empty() && total_bandwidth > 0) {
+        Request top = pq.top();
+        pq.pop();
+
+        if (top.bandwidth <= total_bandwidth) {
+            cout << "Request " << top.id << " allocated " << top.bandwidth << " units.\n";
+            total_bandwidth -= top.bandwidth;
+        } else {
+            cout << "Request " << top.id << " partially allocated " << total_bandwidth << " units.\n";
+            total_bandwidth = 0;
+        }
+    }
+
+    if (total_bandwidth > 0) {
+        cout << "Remaining bandwidth: " << total_bandwidth << " units.\n";
+    } else {
+        cout << "All bandwidth allocated.\n";
+    }
+}
+
 struct node
 {
 int id;
