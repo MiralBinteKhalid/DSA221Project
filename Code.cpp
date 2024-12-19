@@ -21,6 +21,13 @@ bandwidth=btw;
 next=nullptr;
 }
 };
+void allocate_bandwidth(vector<Request>& requests, int total_bandwidth) {
+    priority_queue<Request> pq;
+
+    // Push all requests into the priority queue
+    for (const auto& req : requests) {
+        pq.push(req);
+    }
 struct node
 {
 int id;
