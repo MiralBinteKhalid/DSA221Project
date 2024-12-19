@@ -345,6 +345,7 @@ throw invalid_argument("Start Node does not exist.")
  cout<<endl;
 }
 
+//admin menu
 void adminMenu(networkgraph &graph){
 int choice;
 do{
@@ -399,6 +400,7 @@ do{
 }
 }
 
+//viewer menu
  void viewer menu(networkgraph &graph){
 int choice;
  do{
