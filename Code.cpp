@@ -230,6 +230,9 @@ void exportToDOT(const string& filename) {
                 cout << "Node found: ID = " << nodes[i].id << ", Info = " << nodes[i].info << endl;
            found = true;
                 break;
+             }
+        
+               
            
            
     }
