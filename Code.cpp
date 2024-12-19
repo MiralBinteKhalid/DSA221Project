@@ -21,6 +21,14 @@ bandwidth=btw;
 next=nullptr;
 }
 };
+
+    vector<Request> requests(n);
+    for (int i = 0; i < n; ++i) {
+        cout << "Enter bandwidth and priority for request " << i + 1 << ": ";
+        cin >> requests[i].bandwidth >> requests[i].priority;
+        requests[i].id = i + 1;
+    }
+
 void allocate_bandwidth(vector<Request>& requests, int total_bandwidth) {
     priority_queue<Request> pq;
 
