@@ -261,6 +261,10 @@ int findHighestWeightEdgeInCluster(const vector<int>& cluster) {
         }
         return maxWeight;
     }
+Location* getMinValueNode(Location* node) {
+
+    }
+
 
 
 
