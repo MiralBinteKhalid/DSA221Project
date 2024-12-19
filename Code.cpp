@@ -270,9 +270,11 @@ Location* getMinValueNode(Location* node) {
 
 
     }
-
-
-
+void addIncidentToLocation(Location* location, int incidentID, string description) {
+        Incident* newIncident = new Incident(incidentID, description);
+        newIncident->next = location->incidents;
+        location->incidents = newIncident;
+    }
 
 DFSdisplay(int startNode,bool visited[]){
  visited[node]=true;
