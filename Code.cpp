@@ -238,10 +238,10 @@ void exportToDOT(const string& filename) {
            
     }
 void updateEdgeWeights() {
-        // Implement logic to update edge weights randomly
-        // For example:
-       
-
+        // logic to update edge weights randomly
+        random_device rd;
+        mt19937 gen(rd());
+        uniform_int_distribution<> distrib(1, 100); // Adjust range as needed
         for (int i = 0; i < numNodes; ++i) {
             for (int j = i + 1; j < numNodes; ++j) {
                 if (adjacencyMatrix[i][j] != 0) {
