@@ -232,9 +232,9 @@ void exportToDOT(const string& filename) {
                 break;
              }
         }
-       
-               
-           
+        if (!found) {
+            cout << "Node not found." << endl;
+        
            
     }
 
