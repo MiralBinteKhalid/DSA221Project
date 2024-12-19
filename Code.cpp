@@ -251,6 +251,16 @@ void updateEdgeWeights() {
             }
         }
 }
+int findHighestWeightEdgeInCluster(const vector<int>& cluster) {
+        int maxWeight = 0;
+        for (int i = 0; i < cluster.size(); ++i) {
+            for (int j = i + 1; j < cluster.size(); ++j) {
+                int weight = adjacencyMatrix[cluster[i]][cluster[j]];
+                maxWeight = max(maxWeight, weight);
+            }
+        }
+        return maxWeight;
+    }
 
 
 
