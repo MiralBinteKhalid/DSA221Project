@@ -91,6 +91,7 @@ visited[i]=false;
 nodes[i].edgelist=nullptr;
 }
 }
+
 void addnode(int id,const string &info)
 {
  if (nodecount>=MAX_NODE || nodecount<0){
@@ -106,6 +107,7 @@ void addegde(int sour,int dest,int bandwidth)
 {
  if(sour>=nodecount||dest>=nodecount)
  {
+//exception handling
 throw invalid_argument("Invalid Node");
   return;
  }
@@ -128,6 +130,8 @@ return totaltraffic;
         int destination;
         int bandwidth;
     };
+
+//sorting the nodes
 void merge(vector<SortedEdge>& edges, int left, int mid, int right) {
   int n1 = mid - left + 1;
   int n2 = right - mid;
@@ -165,9 +169,10 @@ void mergeSort(vector<SortedEdge>& edges, int left, int right) {
             mergeSort(edges, left, mid);
             mergeSort(edges, mid + 1, right);
             merge(edges, left, mid, right);
-          
-        
-    }}
+          }
+}
+
+
  void sortEdgesByBandwidth() {
         vector<SortedEdge> edges;
         for (int i = 0; i < nodecount; i++) {
