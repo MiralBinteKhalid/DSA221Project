@@ -228,7 +228,9 @@ void exportToDOT(const string& filename) {
         for (int i = 0; i < nodecount; i++) {
           if (nodes[i].id == nodeId || (!nodeInfo.empty() && nodes[i].info.find(nodeInfo) != string::npos)) {
                 cout << "Node found: ID = " << nodes[i].id << ", Info = " << nodes[i].info << endl;
-                
+           found = true;
+                break;
+           
            
     }
 
