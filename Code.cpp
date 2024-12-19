@@ -234,7 +234,7 @@ void exportToDOT(const string& filename) {
         }
         if (!found) {
             cout << "Node not found." << endl;
-        
+        }
            
     }
 
