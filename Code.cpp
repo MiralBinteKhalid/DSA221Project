@@ -296,7 +296,10 @@ void exportToDOT(const string& filename) {
                   }
         }
              
-              
+void printPath() {
+        if(pathLength == 0) {
+        
+    }          
         
         
     }
