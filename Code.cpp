@@ -289,7 +289,8 @@ void exportToDOT(const string& filename) {
             edge* current = nodes[i].edgelist;
              while (current != nullptr) {
               if (current->bandwidth > threshold) {
-                    
+              cout << "Source: " << current->source << ", Destination: " << current->destination
+                
         
         
     }
