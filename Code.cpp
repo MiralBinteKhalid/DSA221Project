@@ -301,9 +301,16 @@ void printPath() {
         cout << "No path exists\n";
             return;
         }
+ 
+        cout << "Path found: ";
+        for(int i = 0; i < pathLength; i++) {
+            cout << path[i] << " ";
+        }
+        cout << "\n";
+    }
        
         
-    }          
+              
         
 
 //adding weights to edges
