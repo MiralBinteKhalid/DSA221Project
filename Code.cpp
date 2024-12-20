@@ -293,6 +293,9 @@ void exportToDOT(const string& filename) {
                            << ", Bandwidth: " << current->bandwidth << endl;
                 }
                 current = current->next;
+                  }
+        }
+             
               
         
         
