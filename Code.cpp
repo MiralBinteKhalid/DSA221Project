@@ -282,7 +282,10 @@ void exportToDOT(const string& filename) {
         }
            
     }
-
+// Filter edges based on bandwidth threshold
+    void filterEdgesByBandwidth(int threshold) {
+        
+    }
 //adding weights to edges
 void updateEdgeWeights() {
         // logic to update edge weights randomly
