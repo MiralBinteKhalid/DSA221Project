@@ -130,6 +130,47 @@ return totaltraffic;
         int bandwidth;
     };
 
+void merge(int array[], int left, int mid, int right) {
+    int n1 = mid - left + 1;   // Size of the first half
+    int n2 = right - mid;       // Size of the second half
+
+    int leftArray[n1], rightArray[n2]; // Temporary arrays for the two halves
+
+    // Copy elements into temporary arrays
+    for (int i = 0; i < n1; i++)
+        leftArray[i] = array[left + i];
+    for (int j = 0; j < n2; j++)
+        rightArray[j] = array[mid + 1 + j];
+
+    int i = 0, j = 0, k = left;
+
+    // Merge the two halves back into the original array in sorted order
+    while (i < n1 && j < n2) {
+        if (leftArray[i] <= rightArray[j]) {
+            array[k] = leftArray[i];
+            i++;
+        } else {
+            array[k] = rightArray[j];
+            j++;
+        }
+        k++;
+    }
+
+    // Copy any remaining elements of leftArray, if any
+    while (i < n1) {
+        array[k] = leftArray[i];
+        i++;
+        k++;
+    }
+
+    // Copy any remaining elements of rightArray, if any
+    while (j < n2) {
+        array[k] = rightArray[j];
+        j++;
+        k++;
+    }
+}
+
 //sorting the nodes
 void merge(vector<SortedEdge>& edges, int left, int mid, int right) {
   int n1 = mid - left + 1;
