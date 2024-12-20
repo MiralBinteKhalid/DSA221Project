@@ -261,11 +261,7 @@ void exportToDOT(const string& filename) {
         }
         file << "}";
          file.close();
-      
-            cout << "Graph exported to DOT file successfully!" << endl;   
-        
-         
-             
+            cout << "Graph exported to DOT file successfully!" << endl;        
     }
 // Search for nodes based on ID or info
     void searchNode(int nodeId, const string& nodeInfo = "") {
@@ -301,18 +297,13 @@ void printPath() {
         cout << "No path exists\n";
             return;
         }
- 
-        cout << "Path found: ";
+ cout << "Path found: ";
         for(int i = 0; i < pathLength; i++) {
             cout << path[i] << " ";
         }
         cout << "\n";
     }
        
-        
-              
-        
-
 //adding weights to edges
 void updateEdgeWeights() {
         // logic to update edge weights randomly
