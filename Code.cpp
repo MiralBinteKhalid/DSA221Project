@@ -298,11 +298,14 @@ void exportToDOT(const string& filename) {
              
 void printPath() {
         if(pathLength == 0) {
+        cout << "No path exists\n";
+            return;
+        }
+       
         
     }          
         
-        
-    }
+
 //adding weights to edges
 void updateEdgeWeights() {
         // logic to update edge weights randomly
