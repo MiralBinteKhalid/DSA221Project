@@ -290,6 +290,8 @@ void exportToDOT(const string& filename) {
              while (current != nullptr) {
               if (current->bandwidth > threshold) {
               cout << "Source: " << current->source << ", Destination: " << current->destination
+                           << ", Bandwidth: " << current->bandwidth << endl;
+               
                 
         
         
