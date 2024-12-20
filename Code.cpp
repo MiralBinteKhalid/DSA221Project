@@ -287,6 +287,8 @@ void exportToDOT(const string& filename) {
         cout << "Edges with bandwidth greater than " << threshold << ":\n";
         for (int i = 0; i < nodecount; i++) {
             edge* current = nodes[i].edgelist;
+             while (current != nullptr) {
+            
            
         
         
