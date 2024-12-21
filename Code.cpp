@@ -15,6 +15,12 @@ struct AVLNode {
     AVLNode(int d) : data(d), exists(true), left(nullptr), right(nullptr), height(1) {}
 };
 
+struct Task {
+    string name;
+    int bandwidth;  // Bandwidth required
+    int priority;   // Higher number means higher priority
+};
+
 class Queue {
 private:
     struct Node {
