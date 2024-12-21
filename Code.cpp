@@ -6,6 +6,23 @@
 using namepspace std;
 const int MAX_NODES=1000;
 const int MAX_EDGES=1000;
+
+class Queue {
+private:
+    struct Node {
+        int data;
+        Node* next;
+        Node(int d) : data(d), next(nullptr) {}
+    };
+    Node *front, *rear;
+    int size;
+    
+public:
+    Queue() : front(nullptr), rear(nullptr), size(0) {}
+
+
+
+
 //making edges in linkedlist 
 struct egde
 {
