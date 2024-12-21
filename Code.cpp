@@ -38,7 +38,13 @@ bool compareTasks(const Task &a, const Task &b) {
             allocatedTasks.push_back(task.name);
             usedBandwidth += task.bandwidth;
         }
+    }  cout << "Optimized Task Allocation:\n";
+    for (const auto &task : allocatedTasks) {
+        cout << task << endl;
     }
+    cout << "Used Bandwidth: " << usedBandwidth << " Mbps\n";
+}
+
 
 class Queue {
 private:
