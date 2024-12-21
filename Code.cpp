@@ -19,8 +19,33 @@ private:
     
 public:
     Queue() : front(nullptr), rear(nullptr), size(0) {}
+void enqueue(int x) {
+        Node* temp = new Node(x);
+        if (rear == nullptr) {
+            front = rear = temp;
+            size++;
+            return;
+        }
+        rear->next = temp;
+        rear = temp;
+        size++;
+    }
+int dequeue() {
+        if (front == nullptr) {
+            throw runtime_error("Queue is empty");
+        }
+        Node* temp = front;
+        int value = front->data;
+        front = front->next;
+        if (front == nullptr) {
+            rear = nullptr;
+        }
+        delete temp;
+        size--;
+        return value;
+    }
 
-
+};
 
 
 //making edges in linkedlist 
