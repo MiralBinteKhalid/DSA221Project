@@ -46,24 +46,7 @@ bool compareTasks(const Task &a, const Task &b) {
 }
 
 
-class Queue {
-private:
-    struct Node {
-        int data;
-        Node* next;
-        Node(int d) : data(d), next(nullptr) {}
-    };
-    Node *front, *rear;
-    int size;
-    
-public:
-    Queue() : front(nullptr), rear(nullptr), size(0) {}
-void enqueue(int x) {
-        Node* temp = new Node(x);
-        if (rear == nullptr) {
-            front = rear = temp;
-            size++;
-            return;
+
         }
         rear->next = temp;
         rear = temp;
