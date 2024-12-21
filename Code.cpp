@@ -20,6 +20,12 @@ struct Task {
     int bandwidth;  // Bandwidth required
     int priority;   // Higher number means higher priority
 };
+bool compareTasks(const Task &a, const Task &b) {
+    if (a.bandwidth == b.bandwidth) {
+        return a.priority > b.priority;
+    }
+    return a.bandwidth < b.bandwidth;
+}
 
 class Queue {
 private:
