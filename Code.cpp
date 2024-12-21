@@ -6,6 +6,14 @@
 using namepspace std;
 const int MAX_NODES=1000;
 const int MAX_EDGES=1000;
+struct AVLNode {
+    int data;
+    bool exists;
+    AVLNode *left, *right;
+    int height;
+    
+    AVLNode(int d) : data(d), exists(true), left(nullptr), right(nullptr), height(1) {}
+};
 
 class Queue {
 private:
