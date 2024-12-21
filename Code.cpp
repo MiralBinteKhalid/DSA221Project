@@ -47,7 +47,10 @@ int dequeue() {
 bool isEmpty() {
         return front == nullptr;
     }
-    
+    ~Queue() {
+        while (!isEmpty()) {
+            dequeue();
+        }
 
 
 };
