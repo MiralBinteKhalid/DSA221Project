@@ -29,6 +29,16 @@ bool compareTasks(const Task &a, const Task &b) {
     }
     return a.bandwidth < b.bandwidth;
 }
+     vector<string> allocatedTasks;
+    int usedBandwidth = 0;
+
+    // Allocate bandwidth to tasks
+    for (const auto &task : tasks) {
+        if (usedBandwidth + task.bandwidth <= totalBandwidth) {
+            allocatedTasks.push_back(task.name);
+            usedBandwidth += task.bandwidth;
+        }
+    }
 
 class Queue {
 private:
