@@ -44,6 +44,11 @@ int dequeue() {
         size--;
         return value;
     }
+bool isEmpty() {
+        return front == nullptr;
+    }
+    
+
 
 };
 
