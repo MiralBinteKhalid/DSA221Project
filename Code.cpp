@@ -226,7 +226,15 @@ void mergeSort(int array[], int left, int right) {
         merge(array, left, mid, right);
     }
 }
-////
+
+void SortNodes() {
+    cout << "Nodes before sorting:\n";
+    for (int i = 0; i < numNodes; i++) {
+        cout << SortMatrix[i] << " ";
+    }
+   
+}
+
 
     ~Graph() {
         for (int i = 0; i < numNodes; i++) {
