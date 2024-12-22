@@ -67,7 +67,7 @@ bool empty() {
     }
 };
 
-
+//for avl trees
 struct AVLNode {
     int data;
     bool exists;
