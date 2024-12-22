@@ -158,6 +158,8 @@ bool nodeExists(int nodeId) {
     
 }
  void DFSUtil(int node, bool visited[]) {
+      visited[node] = true;
+        cout << node << " ";
 
 public:
     Graph(int n) : numNodes(n), root(nullptr) {
@@ -287,8 +289,7 @@ void deleteNode(int nodeId) {
         }
     }
 
-        visited[node] = true;
-        cout << node << " ";
+       
         for (int i = 0; i < numNodes; i++) {
             if (adjacencyMatrix[node][i] && !visited[i] && nodeExists(i)) {
                 DFSUtil(i, visited);
