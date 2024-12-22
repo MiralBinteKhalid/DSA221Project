@@ -31,25 +31,16 @@ public:
         rear = temp;
         size++;
     }
-
-AVLNode* rightRotate(AVLNode* y) {
-    AVLNode* x = y->left;
-    AVLNode* T2 = x->right;
-    x->right = y;
-    y->left = T2;
-    y->height = max(height(y->left), height(y->right)) + 1;
-    x->height = max(height(x->left), height(x->right)) + 1;
-    return x;
-}
-AVLNode* leftRotate(AVLNode* x) {
-    AVLNode* y = x->right;
-    AVLNode* T2 = y->left;
-    y->left = x;
-    x->right = T2;
-    x->height = max(height(x->left), height(x->right)) + 1;
-    y->height = max(height(y->left), height(y->right)) + 1;
-    return y;
-}
+ int dequeue() {
+        if (front == nullptr) {
+            throw runtime_error("Queue is empty");
+        }
+        Node* temp = front;
+        int value = front->data;
+        front = front->next;
+        if (front == nullptr) {
+            rear = nullptr;
+        }
 
 AVLNode* insertAVL(AVLNode* node, int data) {
     if (!node) return new AVLNode(data);
