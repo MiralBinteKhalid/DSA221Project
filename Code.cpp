@@ -164,6 +164,27 @@ void deleteNode(int nodeId) {
             adjacencyMatrix[i][nodeId] = 0;
         }
     }
+ void DFSUtil(int node, bool visited[]) {
+        visited[node] = true;
+        cout << node << " ";
+        for (int i = 0; i < numNodes; i++) {
+            if (adjacencyMatrix[node][i] && !visited[i] && nodeExists(i)) {
+                DFSUtil(i, visited);
+            }
+        }
+    }
+    public:
+
+    void DFS(int startNode) {
+        if (!nodeExists(startNode)) {
+            throw invalid_argument("Start node does not exist");
+        }
+        bool* visited = new bool[numNodes]();
+        DFSUtil(startNode, visited);
+        delete[] visited;
+        cout << endl;
+    }
+
 void optimizeBandwidth(int totalBandwidth, vector<Task> &tasks) {
     // Sort tasks using the comparator
     sort(tasks.begin(), tasks.end(), compareTasks);
