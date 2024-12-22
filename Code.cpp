@@ -311,7 +311,7 @@ void SortNodes() {
             }
         } 
         cout<<endl;
-    }
+    } 
 
     //to find best bandwidth through highest weighted edge
 pair<int,int> findBestBandwidth(){
@@ -353,36 +353,8 @@ pair<int,int> findBestBandwidth(){
     return bestPair;
 }
 
-//adding edges to make a graph
- void addEdge(int v, int w) { 
-    if (v >= 0 && v < numNodes && w >= 0 && w < numNodes) {
-        // Update both adjacency list and matrix
-        //using list to add edges
-        adj[v].push_back(w);
-        adj[w].push_back(v);
-        
-        // Setting default weight of 1 in adjacency matrix
-        adjacencyMatrix[v][w] = 1;
-        adjacencyMatrix[w][v] = 1;
-        
-        cout << "Edge added between " << v << " and " << w << endl;
-    } else {
-        //exception handling
-        throw invalid_argument("Invalid edge vertices");
-    }
-}   
 
-//To check if it is a graph or avl tree 
-bool hasEdges() {
-    for (int i = 0; i < numNodes; i++) {
-        for (int j = 0; j < numNodes; j++) {
-            if (adjacencyMatrix[i][j] > 0) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
+
 
 //BFS for graphs and trees
 void BFS(int startNode = 0) {
@@ -412,6 +384,7 @@ void BFS(int startNode = 0) {
         cout << endl;
     } 
     }
+
 
 void displayGraph() {
         cout << "\nCurrent Graph Structure:\n";
@@ -585,7 +558,6 @@ int main() {
     
     return 0;
 }
-
 
 
 
