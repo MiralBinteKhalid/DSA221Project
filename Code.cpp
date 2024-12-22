@@ -113,6 +113,13 @@ private:
         y->height = max(height(y->left), height(y->right)) + 1;
         return y;
     }
+AVLNode* insertAVL(AVLNode* node, int data) {
+    // Standard AVL insertion with balancing
+    if (!node) return new AVLNode(data);
+    //hHHH
+    
+}
+
 public:
     Graph(int n) : numNodes(n), root(nullptr) {
         if (n <= 0) throw invalid_argument("Number of nodes must be positive");
