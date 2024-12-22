@@ -118,7 +118,10 @@ AVLNode* insertAVL(AVLNode* node, int data) {
     if (!node) return new AVLNode(data);
     if (data < node->data)
         node->left = insertAVL(node->left, data);
-   //HH
+    else if (data > node->data)
+        node->right = insertAVL(node->right, data);
+   //hhh
+    
     
 }
 
