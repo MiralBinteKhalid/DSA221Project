@@ -8,6 +8,7 @@
 #include<list>
 using namespace std;
 
+//Queue class
 class Queue {
 private:
     struct Node {
