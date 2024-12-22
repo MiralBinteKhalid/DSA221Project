@@ -314,11 +314,88 @@ void BFS(int startNode) {
     cout << endl;
 }
 
-
-
-
-
 };
+
+void viewerMenu(Graph& graph);  // Forward declaration
+
+void adminMenu(Graph& graph) {
+
+
+
+
+    
+
+}
+
+void viewerMenu(Graph& graph) {
+    int choice;
+    do {
+        cout << "\nViewer Menu:\n"
+             << "1. Find Best Bandwidth\n"
+             << "2. Display Graph\n"
+             << "3. Perform DFS\n"
+             << "4. Switch to Admin Menu\n"
+             << "5. Sort Nodes\n"
+             << "6. Perform BFS\n"
+             << "7. Exit\n"
+             << "Enter choice: ";
+
+        if (!(cin >> choice)) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input\n";
+            continue;
+        }
+
+        try {
+            switch (choice) {
+                case 1: {
+                    auto [node1, node2] = graph.findBestBandwidth();
+    if (node1 != -1) {
+        cout << "Best bandwidth between nodes " << node1 << " and " << node2 
+             << " with weight " << graph.adjacencyMatrix[node1][node2] << "\n";
+    } else {
+        cout << "No valid edges found\n";
+    }
+    break;
+                }
+                case 2:
+                    graph.displayGraph();
+                    break;
+                case 3: {
+                    int startNode;
+                    cout << "Enter start node for DFS: ";
+                    if (cin >> startNode) {
+                        graph.DFS(startNode);
+                    }
+                    break;
+                }
+                case 4:
+                    adminMenu(graph);
+                    return;
+                case 5:{
+                    graph.SortNodes();
+                    break;
+                }
+                case 6:{
+                    int startNode;
+                    cout << "Enter start node for BFS: ";
+                    if (cin >> startNode) {
+                        graph.BFS(startNode);
+                    }
+                    break;
+                }
+                case 7:
+                cout<<"Exiting viewer menu\n";
+                    return;
+                default:
+                    cout << "Invalid choice\n";
+            }
+        } catch (const exception& e) {
+            cout << "Error: " << e.what() << endl;
+        }
+    } while (choice != 7);
+}
 
 
 
