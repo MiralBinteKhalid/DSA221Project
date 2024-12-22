@@ -50,6 +50,11 @@ public:
         throw runtime_error("Queue is empty");
     }
     return front->data;
+      }
+ bool isEmpty() {
+        return front == nullptr;
+    }
+
 AVLNode* insertAVL(AVLNode* node, int data) {
     if (!node) return new AVLNode(data);
     
