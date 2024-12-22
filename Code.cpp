@@ -27,7 +27,10 @@ public:
             size++;
             return;
         }
-
+      rear->next = temp;
+        rear = temp;
+        size++;
+    }
 
 AVLNode* rightRotate(AVLNode* y) {
     AVLNode* x = y->left;
