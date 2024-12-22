@@ -116,7 +116,9 @@ private:
 AVLNode* insertAVL(AVLNode* node, int data) {
     // Standard AVL insertion with balancing
     if (!node) return new AVLNode(data);
-    //hHHH
+    if (data < node->data)
+        node->left = insertAVL(node->left, data);
+   //HH
     
 }
 
