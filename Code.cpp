@@ -95,6 +95,8 @@ private:
     int getBalance(AVLNode* node) {
         return node ? height(node->left) - height(node->right) : 0;
     }
+
+//rotations to balance
     AVLNode* rightRotate(AVLNode* y) {
         AVLNode* x = y->left;
         AVLNode* T2 = x->right;
