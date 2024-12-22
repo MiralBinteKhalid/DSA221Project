@@ -154,6 +154,7 @@ AVLNode* findNode(AVLNode* node, int data) {
 }
 bool nodeExists(int nodeId) {
     AVLNode* node = findNode(root, nodeId);
+    return node && node->exists;
     
 }
 
