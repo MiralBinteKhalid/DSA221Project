@@ -2,9 +2,9 @@
 #inlude<string>
 #include<limits>
 #include <stdexcept>
-#include <cstdlib> // For rand() and srand()
-#include <ctime>   // For time()
-#include <utility> // For std::pair
+#include <cstdlib> // For rand() and srand() functions
+#include <ctime>   // For time() in srand() 
+#include <utility> // For std pair
 #include<list>
 using namespace std;
 
