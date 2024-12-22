@@ -41,6 +41,10 @@ public:
         if (front == nullptr) {
             rear = nullptr;
         }
+     delete temp;
+        size--;
+        return value;
+    }
 
 AVLNode* insertAVL(AVLNode* node, int data) {
     if (!node) return new AVLNode(data);
