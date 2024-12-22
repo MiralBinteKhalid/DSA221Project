@@ -147,6 +147,7 @@ AVLNode* insertAVL(AVLNode* node, int data) {
     return node;
     
 }
+//to find node
 AVLNode* findNode(AVLNode* node, int data) {
     if (!node) return nullptr;
      if (data == node->data) return node;
@@ -154,16 +155,19 @@ AVLNode* findNode(AVLNode* node, int data) {
       return findNode(node->right, data); 
   
 }
+//to see if node exists
 bool nodeExists(int nodeId) {
     AVLNode* node = findNode(root, nodeId);
     return node && node->exists;
     
 }
+
  void DFSUtil(int node, bool visited[]) {
       visited[node] = true;
         cout << node << " ";
 
 public:
+//constructor
     Graph(int n) : numNodes(n), root(nullptr) {
         if (n <= 0) throw invalid_argument("Number of nodes must be positive");
         adjacencyMatrix = new int*[n];
