@@ -162,15 +162,24 @@ bool nodeExists(int nodeId) {
     
 }
 
- void DFSUtil(int node, bool visited[]) {
-      visited[node] = true;
-        cout << node << " ";
- for (int i = 0; i < numNodes; i++) {
-            if (adjacencyMatrix[node][i] && !visited[i] && nodeExists(i)) {
-                DFSUtil(i, visited);
-            }
+void DFSUtil(int node, bool visited[]) {
+    visited[node] = true;
+    cout << node << " ";
+    
+    for (auto i = adj[node].begin(); i != adj[node].end(); ++i) {
+        if (!visited[*i] && nodeExists(*i)) {
+            DFSUtil(*i, visited);
         }
     }
+}
+
+void DFSTree(AVLNode* node) {
+    if (node != nullptr && node->exists) {
+        cout << node->data << " ";
+        DFSTree(node->left);
+        DFSTree(node->right);
+    }
+}
 
 public:
 //constructor
