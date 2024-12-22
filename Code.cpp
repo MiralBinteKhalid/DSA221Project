@@ -397,6 +397,40 @@ void viewerMenu(Graph& graph) {
     } while (choice != 7);
 }
 
+//main menu
+int main() {
+    try {
+        cout << "Enter maximum number of nodes: ";
+        int n;
+        if (!(cin >> n)) {
+            throw invalid_argument("Invalid input for number of nodes");
+        }
+        
+        Graph graph(n);
+        string role;
+        
+        do {
+            cout << "Enter role (admin/viewer): ";
+            cin >> role;
+            
+            if (role == "admin") {
+                adminMenu(graph);
+                break;
+            } else if (role == "viewer") {
+                viewerMenu(graph);
+                break;
+            } else {
+                cout << "Invalid role. Please enter 'admin' or 'viewer'\n";
+            }
+        } while (true);
+        
+    } catch (const exception& e) {
+        cout << "Error: " << e.what() << endl;  //Error displyed after catching if occurs
+    }
+    
+    return 0;
+}
+
 
 
 
