@@ -321,6 +321,9 @@ void BFS(int startNode) {
 
 };
 
+
+
+//Interactive Menus
 void viewerMenu(Graph& graph);  // Forward declaration
 
 void adminMenu(Graph& graph) {
