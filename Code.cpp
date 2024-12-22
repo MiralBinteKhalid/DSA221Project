@@ -64,6 +64,8 @@ bool empty() {
         }
     }
 };
+
+
 struct AVLNode {
     int data;
     bool exists;
@@ -72,6 +74,8 @@ struct AVLNode {
     
     AVLNode(int d) : data(d), exists(true), left(nullptr), right(nullptr), height(1) {}
 };
+
+
 class Graph {
     public:
      int** adjacencyMatrix;//public so that it can be displayed in bandwidth
@@ -185,65 +189,8 @@ void deleteNode(int nodeId) {
         cout << endl;
     }
 
-void optimizeBandwidth(int totalBandwidth, vector<Task> &tasks) {
-    // Sort tasks using the comparator
-    sort(tasks.begin(), tasks.end(), compareTasks);
-
-struct Task {
-    string name;
-    int bandwidth;  // Bandwidth required
-    int priority;   // Higher number means higher priority
-};
-bool compareTasks(const Task &a, const Task &b) {
-    if (a.bandwidth == b.bandwidth) {
-        return a.priority > b.priority;
-    }
-    return a.bandwidth < b.bandwidth;
-}
-     vector<string> allocatedTasks;
-    int usedBandwidth = 0;
-
-    // Allocate bandwidth to tasks
-    for (const auto &task : tasks) {
-        if (usedBandwidth + task.bandwidth <= totalBandwidth) {
-            allocatedTasks.push_back(task.name);
-            usedBandwidth += task.bandwidth;
-        }
-    }  cout << "Optimized Task Allocation:\n";
-    for (const auto &task : allocatedTasks) {
-        cout << task << endl;
-    }
-    cout << "Used Bandwidth: " << usedBandwidth << " Mbps\n";
-}
 
 
-
-        }
-        rear->next = temp;
-        rear = temp;
-        size++;
-    }
-int dequeue() {
-        if (front == nullptr) {
-            throw runtime_error("Queue is empty");
-        }
-        Node* temp = front;
-        int value = front->data;
-        front = front->next;
-        if (front == nullptr) {
-            rear = nullptr;
-        }
-        delete temp;
-        size--;
-        return value;
-    }
-bool isEmpty() {
-        return front == nullptr;
-    }
-    ~Queue() {
-        while (!isEmpty()) {
-            dequeue();
-        }
 
 
 };
