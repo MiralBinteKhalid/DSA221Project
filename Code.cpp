@@ -78,6 +78,7 @@ struct AVLNode {
 };
 
 
+//Main class showing all functionalities
 class Graph {
     public:
      int** adjacencyMatrix;//public so that it can be displayed in bandwidth
