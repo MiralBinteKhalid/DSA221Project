@@ -227,7 +227,21 @@ pair<int,int> findBestBandwidth(){
     delete[] existingNodes;
     return bestPair;
 }
-    
+ void addEdge(int v, int w) {
+    if (v >= 0 && v < numNodes && w >= 0 && w < numNodes) {
+        // Update both adjacency list and matrix
+        adj[v].push_back(w);
+        adj[w].push_back(v);
+        
+        // Set default weight of 1 in adjacency matrix
+        adjacencyMatrix[v][w] = 1;
+        adjacencyMatrix[w][v] = 1;
+        
+        cout << "Edge added between " << v << " and " << w << endl;
+    } else {
+        throw invalid_argument("Invalid edge vertices");
+    }
+}   
 
 
 
