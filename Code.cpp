@@ -106,6 +106,22 @@ private:
         y->height = max(height(y->left), height(y->right)) + 1;
         return y;
     }
+public:
+    Graph(int n) : numNodes(n), root(nullptr) {
+        if (n <= 0) throw invalid_argument("Number of nodes must be positive");
+        adjacencyMatrix = new int*[n];
+        for (int i = 0; i < n; i++) {
+            adjacencyMatrix[i] = new int[n]();
+        }
+         i=0;
+      SortMatrix=new int[numNodes];
+      for (int i = 0; i < n; i++) {
+            SortMatrix[i]=0;
+        }
+         adj = new list<int>[numNodes];
+        
+    }
+
 
 void optimizeBandwidth(int totalBandwidth, vector<Task> &tasks) {
     // Sort tasks using the comparator
