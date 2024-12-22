@@ -148,7 +148,8 @@ AVLNode* insertAVL(AVLNode* node, int data) {
 AVLNode* findNode(AVLNode* node, int data) {
     if (!node) return nullptr;
      if (data == node->data) return node;
-    
+    if (data < node->data) return findNode(node->left, data);
+  
 }
 
 public:
