@@ -392,59 +392,79 @@ bool hasEdges() {
 }
 
 //BFS for graphs and trees
-void BFS(int startNode) {
-    if (!nodeExists(startNode)) {
-        throw invalid_argument("Start node does not exist");
-    }
-
-    if (hasEdges()) {
-        // Graph BFS
-        cout << "BFS traversal starting from node " << startNode << ": ";
-        bool* visited = new bool[numNodes]();
-        Queue graphQueue;
-        
-        visited[startNode] = true;
-        graphQueue.enqueue(startNode);
-        
-        while (!graphQueue.empty()) {
-            int currentNode = graphQueue.dequeue();
-            cout << currentNode << " ";
-            
-            // Check adjacency matrix for neighbors
-            for (auto i = adj[currentNode].begin(); i != adj[currentNode].end(); ++i) {
-                if (!visited[*i] && nodeExists(*i)) {
-                    visited[*i] = true;
-                    graphQueue.enqueue(*i);
-                }
-            }
-
-        }
-        delete[] visited;
-    } else {
-        // AVL Tree BFS
-        cout << "BFS traversal: ";
-        if (root != nullptr) {
-            Queue queue;
-            queue.enqueue(root->data);
-            AVLNode* current = root;
-            
-            while (!queue.empty()) {
-                int currentValue = queue.dequeue();
-                cout << currentValue << " ";
+void BFS(int startNode = 0) {
+    try {
+        if (!nodeExists(startNode)) {
+            cout << "Starting BFS from root node\n";
+            if (root != nullptr) {
+                cout << "Tree BFS traversal: ";
+                Queue queue;
+                queue.enqueue(root->data);
                 
-                current = findNode(root, currentValue);
-                if (current->left != nullptr) {
-                    queue.enqueue(current->left->data);
+                while (!queue.empty()) {
+                    int currentValue = queue.dequeue();
+                    cout << currentValue << " ";
+                    
+                    AVLNode* current = findNode(root, currentValue);
+                    if (current->left != nullptr) {
+                        queue.enqueue(current->left->data);
+                    }
+                    if (current->right != nullptr) {
+                        queue.enqueue(current->right->data);
+                    }
                 }
-                if (current->right != nullptr) {
-                    queue.enqueue(current->right->data);
+            } else {
+                cout << "Tree is empty";
+            }
+        } else {
+            if (hasEdges()) {
+                cout << "Graph BFS traversal: ";
+                bool* visited = new bool[numNodes]();
+                Queue queue;
+                
+                visited[startNode] = true;
+                queue.enqueue(startNode);
+                
+                while (!queue.empty()) {
+                    int current = queue.dequeue();
+                    cout << current << " ";
+                    
+                    for (auto i = adj[current].begin(); i != adj[current].end(); ++i) {
+                        if (!visited[*i] && nodeExists(*i)) {
+                            visited[*i] = true;
+                            queue.enqueue(*i);
+                        }
+                    }
+                }
+                delete[] visited;
+            } else {
+                cout << "Tree BFS traversal: ";
+                if (root != nullptr) {
+                    Queue queue;
+                    queue.enqueue(root->data);
+                    
+                    while (!queue.empty()) {
+                        int currentValue = queue.dequeue();
+                        cout << currentValue << " ";
+                        
+                        AVLNode* current = findNode(root, currentValue);
+                        if (current->left != nullptr) {
+                            queue.enqueue(current->left->data);
+                        }
+                        if (current->right != nullptr) {
+                            queue.enqueue(current->right->data);
+                        }
+                    }
                 }
             }
         }
+        cout << endl;
+    } catch (const exception& e) {
+        cout << "Error in BFS: " << e.what() << endl;
     }
-    cout << endl;
 }
-     void displayGraph() {
+
+void displayGraph() {
         cout << "\nCurrent Graph Structure:\n";
         for (int i = 0; i < numNodes; i++) {
             if (nodeExists(i)) {
