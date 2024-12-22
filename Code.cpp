@@ -193,6 +193,18 @@ void deleteNode(int nodeId) {
 
 pair<int,int> findBestBandwidth(){
     srand(static_cast<unsigned>(time(0)));
+    int maxWeight = 0;
+    pair<int, int> bestPair(-1, -1);
+    
+    // Count existing nodes first
+    int* existingNodes = new int[numNodes];
+    int nodeCount = 0;
+    
+    for (int i = 0; i < numNodes; i++) {
+        if (nodeExists(i)) {
+            existingNodes[nodeCount++] = i;
+        }
+    }
     
 
 
