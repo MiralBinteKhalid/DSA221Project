@@ -1,4 +1,3 @@
-
 #include<iostream>
 #inlude<string>
 #include<limits>
@@ -7,12 +6,15 @@
 #include <ctime>   // For time()
 #include <utility> // For std::pair
 #include<list>
-struct AVLNode {
-    int data;
-    bool exists;
-    AVLNode *left, *right;
-    int height;
-    
+using namespace std;
+
+class Queue {
+private:
+    struct Node {
+        int data;
+        Node* next;
+        Node(int d) : data(d), next(nullptr) {}
+    };
     AVLNode(int d) : data(d), exists(true), left(nullptr), right(nullptr), height(1) {}
 };
 class graph{
