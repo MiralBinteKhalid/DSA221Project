@@ -15,8 +15,11 @@ private:
         Node* next;
         Node(int d) : data(d), next(nullptr) {}
     };
-    AVLNode(int d) : data(d), exists(true), left(nullptr), right(nullptr), height(1) {}
-};
+  Node *front, *rear;
+    int size;
+    
+public:
+    Queue() : front(nullptr), rear(nullptr), size(0) {}
 class graph{
 AVLNode* root;
 int height(AVLNode* node) {
