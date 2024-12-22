@@ -19,15 +19,15 @@ private:
     int size;
     
 public:
-    Queue() : front(nullptr), rear(nullptr), size(0) {}
-class graph{
-AVLNode* root;
-int height(AVLNode* node) {
-    return node ? node->height : 0;
-}
-int getBalance(AVLNode* node) {
-    return node ? height(node->left) - height(node->right) : 0;
-}
+    Queue() : front(nullptr), rear(nullptr), size(0) {} 
+    void enqueue(int x) {
+        Node* temp = new Node(x);
+        if (rear == nullptr) {
+            front = rear = temp;
+            size++;
+            return;
+        }
+
 
 AVLNode* rightRotate(AVLNode* y) {
     AVLNode* x = y->left;
