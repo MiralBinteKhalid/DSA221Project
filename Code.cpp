@@ -148,9 +148,11 @@ public:
         i++;
     }
 void deleteNode(int nodeId) {
+    //if node is out of range error thrown
         if (nodeId < 0 || nodeId >= numNodes) {
             throw invalid_argument("Node ID out of range");
         }
+    //finding root to delete
         AVLNode* node = findNode(root, nodeId);
         if (!node || !node->exists) {
             throw invalid_argument("Node does not exist");
@@ -164,6 +166,7 @@ void deleteNode(int nodeId) {
         if (!node || !node->exists) {
             throw invalid_argument("Node does not exist");
         }
+        //showing node doesn't exist
         node->exists = false;
             // Clear adjacency matrix rows and columns
         for (int i = 0; i < numNodes; i++) {
@@ -191,7 +194,9 @@ void deleteNode(int nodeId) {
         cout << endl;
     }
 
+    //to find best bandwidth through highest weighted edge
 pair<int,int> findBestBandwidth(){
+    //random dynamically
     srand(static_cast<unsigned>(time(0)));
     int maxWeight = 0;
     pair<int, int> bestPair(-1, -1);
