@@ -122,6 +122,15 @@ public:
         
     }
 
+    ~Graph() {
+        for (int i = 0; i < numNodes; i++) {
+            delete[] adjacencyMatrix[i];
+        }
+        delete[] adjacencyMatrix;
+        // Clean up AVL tree (implement recursive deletion)
+        delete[] SortMatrix;
+        delete[] adj;
+    }
 
 void optimizeBandwidth(int totalBandwidth, vector<Task> &tasks) {
     // Sort tasks using the comparator
