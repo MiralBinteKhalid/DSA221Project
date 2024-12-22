@@ -442,9 +442,8 @@ void adminMenu(Graph& graph) {
         cout << "\nAdmin Menu:\n"
              << "1. Add Node\n"
              << "2. Delete Node\n"
-             << "3. Add edge\n"
-             << "4. Switch to Viewer Menu\n"
-             << "5. Exit\n"
+             << "3. Switch to Viewer Menu\n"
+             << "4. Exit\n"
              << "Enter choice: ";
         
         if (!(cin >> choice)) {
@@ -474,18 +473,11 @@ void adminMenu(Graph& graph) {
                     }
                     break;
                 }
-                case 3: {
-                    int node1, node2;
-                    cout << "Enter two nodes to connect (node1 node2): ";
-                    if (cin >> node1 >> node2) {
-                        graph.addEdge(node1, node2);
-                    }
-                    break;
-                }
-                case 4:
+               
+                case 3:
                     viewerMenu(graph);
                     return;
-                case 5:
+                case 4:
                     cout << "Exiting admin menu\n";
                     return;
                 default:
@@ -495,7 +487,7 @@ void adminMenu(Graph& graph) {
             cout << "Error: " << e.what() << endl;
             continue;
         }
-    } while (choice != 5);
+    } while (choice != 4);
 }
 void viewerMenu(Graph& graph) {
     int choice;
