@@ -120,7 +120,12 @@ AVLNode* insertAVL(AVLNode* node, int data) {
         node->left = insertAVL(node->left, data);
     else if (data > node->data)
         node->right = insertAVL(node->right, data);
-   //hhh
+     else {
+        node->exists = true;
+        return node;
+    }
+    //hh
+
     
     
 }
