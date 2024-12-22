@@ -485,7 +485,20 @@ void adminMenu(Graph& graph) {
                     }
                     break;
                 }
-               //////////
+                case 4:
+                    viewerMenu(graph);
+                    return;
+                case 5:
+                    cout << "Exiting admin menu\n";
+                    return;
+                default:
+                    cout << "Invalid choice\n";
+            }
+        } catch (const exception& e) {
+            cout << "Error: " << e.what() << endl;
+            continue;
+        }
+    } while (choice != 5);
 }
 void viewerMenu(Graph& graph) {
     int choice;
