@@ -34,7 +34,7 @@ public:
     }
  int dequeue() {
         if (front == nullptr) {
-            throw runtime_error("Queue is empty");
+            throw runtime_error("Queue is empty");  //exception
         }
         Node* temp = front;
         int value = front->data;
@@ -58,8 +58,9 @@ public:
 bool empty() {
     return isEmpty();
 }
-   
-    ~Queue() {
+
+//destructor
+~Queue() {
         while (!isEmpty()) {
             dequeue();
         }
