@@ -1,5 +1,5 @@
 #include<iostream>
-#inlude<string>
+#include<string>
 #include<limits>
 #include <stdexcept>
 #include <cstdlib> // For rand() and srand() functions
@@ -273,17 +273,7 @@ void SortNodes() {
         root = insertAVL(root, nodeId);
         i++;
     }
-void deleteNode(int nodeId) {
-    //if node is out of range error thrown
-        if (nodeId < 0 || nodeId >= numNodes) {
-            throw invalid_argument("Node ID out of range");
-        }
-    //finding root to delete
-        AVLNode* node = findNode(root, nodeId);
-        if (!node || !node->exists) {
-            throw invalid_argument("Node does not exist");
-        }
-        node->exists = false;
+
     void deleteNode(int nodeId) {
         if (nodeId < 0 || nodeId >= numNodes) {
             throw invalid_argument("Node ID out of range");
