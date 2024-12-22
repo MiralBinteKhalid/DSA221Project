@@ -300,16 +300,26 @@ void SortNodes() {
         }
     }
 
-    void DFS(int startNode) {
-        if (!nodeExists(startNode)) {
-            throw invalid_argument("Start node does not exist");
+  void DFS(int startNode) {
+    if (!nodeExists(startNode)) {
+        throw invalid_argument("Start node does not exist");
+    }
+    
+    if (hasEdges()) {
+        cout << "DFS traversal starting from node " << startNode << ": ";
+        bool* visited = new bool[numNodes];
+        for (int i = 0; i < numNodes; i++) {
+            visited[i] = false;
         }
-        bool* visited = new bool[numNodes]();
+        
         DFSUtil(startNode, visited);
         delete[] visited;
-        cout << endl;
+    } else {
+        cout << "Tree DFS traversal: ";
+        DFSTree(root);
     }
-
+    cout << endl;
+}
     //to find best bandwidth through highest weighted edge
 pair<int,int> findBestBandwidth(){
     //random dynamically
