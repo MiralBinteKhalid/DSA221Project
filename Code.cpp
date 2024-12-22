@@ -214,6 +214,18 @@ void merge(int array[], int left, int mid, int right) {
         k++;
     }
 }
+void mergeSort(int array[], int left, int right) {
+    if (left < right) {
+        int mid = left + (right - left) / 2; // Calculate the midpoint
+
+        // Recursively divide and sort both halves
+        mergeSort(array, left, mid);
+        mergeSort(array, mid + 1, right);
+
+        // Merge the sorted halves
+        merge(array, left, mid, right);
+    }
+}
 ////
 
     ~Graph() {
