@@ -53,6 +53,24 @@ AVLNode* insertAVL(AVLNode* node, int data) {
         node->exists = true;
         return node;
     }
+    
+    node->height = max(height(node->left), height(node->right)) + 1;
+    int balance = getBalance(node);
+
+    if (balance > 1 && data < node->left->data)
+        return rightRotate(node);
+    if (balance < -1 && data > node->right->data)
+        return leftRotate(node);
+    if (balance > 1 && data > node->left->data) {
+        node->left = leftRotate(node->left);
+        return rightRotate(node);
+    }
+    if (balance < -1 && data < node->right->data) {
+        node->right = rightRotate(node->right);
+        return leftRotate(node);
+    }
+
+    return node;
 
 
 
