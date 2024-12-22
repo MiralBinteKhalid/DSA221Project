@@ -232,6 +232,9 @@ void SortNodes() {
     for (int i = 0; i < numNodes; i++) {
         cout << SortMatrix[i] << " ";
     }
+     mergeSort(SortMatrix, 0, numNodes - 1);
+
+   ///////
    
 }
 
