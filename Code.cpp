@@ -140,6 +140,30 @@ public:
         root = insertAVL(root, nodeId);
         i++;
     }
+void deleteNode(int nodeId) {
+        if (nodeId < 0 || nodeId >= numNodes) {
+            throw invalid_argument("Node ID out of range");
+        }
+        AVLNode* node = findNode(root, nodeId);
+        if (!node || !node->exists) {
+            throw invalid_argument("Node does not exist");
+        }
+        node->exists = false;
+    void deleteNode(int nodeId) {
+        if (nodeId < 0 || nodeId >= numNodes) {
+            throw invalid_argument("Node ID out of range");
+        }
+        AVLNode* node = findNode(root, nodeId);
+        if (!node || !node->exists) {
+            throw invalid_argument("Node does not exist");
+        }
+        node->exists = false;
+            // Clear adjacency matrix rows and columns
+        for (int i = 0; i < numNodes; i++) {
+            adjacencyMatrix[nodeId][i] = 0;
+            adjacencyMatrix[i][nodeId] = 0;
+        }
+    }
 void optimizeBandwidth(int totalBandwidth, vector<Task> &tasks) {
     // Sort tasks using the comparator
     sort(tasks.begin(), tasks.end(), compareTasks);
