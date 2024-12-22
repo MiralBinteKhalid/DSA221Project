@@ -45,7 +45,11 @@ public:
         size--;
         return value;
     }
-
+  int peek() {
+    if (front == nullptr) {
+        throw runtime_error("Queue is empty");
+    }
+    return front->data;
 AVLNode* insertAVL(AVLNode* node, int data) {
     if (!node) return new AVLNode(data);
     
