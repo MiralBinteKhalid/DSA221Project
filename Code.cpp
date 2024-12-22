@@ -205,6 +205,28 @@ pair<int,int> findBestBandwidth(){
             existingNodes[nodeCount++] = i;
         }
     }
+    if (nodeCount >= 2) {
+        // Assign random weights between existing nodes
+        for (int i = 0; i < nodeCount; i++) {
+            for (int j = i + 1; j < nodeCount; j++) {
+                int node1 = existingNodes[i];
+                int node2 = existingNodes[j];
+                
+                int weight = rand() % 100 + 1;  // Random weight 1-100
+                adjacencyMatrix[node1][node2] = weight;
+                adjacencyMatrix[node2][node1] = weight;
+
+                if (weight > maxWeight) {
+                    maxWeight = weight;
+                    bestPair = {node1, node2};
+                }
+            }
+        }
+    }
+    
+    delete[] existingNodes;
+    return bestPair;
+}
     
 
 
