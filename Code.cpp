@@ -260,6 +260,60 @@ bool hasEdges() {
     return false;
 }
 
+//BFS for graphs and trees
+void BFS(int startNode) {
+    if (!nodeExists(startNode)) {
+        throw invalid_argument("Start node does not exist");
+    }
+
+    if (hasEdges()) {
+        // Graph BFS
+        cout << "BFS traversal starting from node " << startNode << ": ";
+        bool* visited = new bool[numNodes]();
+        Queue graphQueue;
+        
+        visited[startNode] = true;
+        graphQueue.enqueue(startNode);
+        
+        while (!graphQueue.empty()) {
+            int currentNode = graphQueue.dequeue();
+            cout << currentNode << " ";
+            
+            // Check adjacency matrix for neighbors
+            for (auto i = adj[currentNode].begin(); i != adj[currentNode].end(); ++i) {
+                if (!visited[*i] && nodeExists(*i)) {
+                    visited[*i] = true;
+                    graphQueue.enqueue(*i);
+                }
+            }
+
+        }
+        delete[] visited;
+    } else {
+        // AVL Tree BFS
+        cout << "BFS traversal: ";
+        if (root != nullptr) {
+            Queue queue;
+            queue.enqueue(root->data);
+            AVLNode* current = root;
+            
+            while (!queue.empty()) {
+                int currentValue = queue.dequeue();
+                cout << currentValue << " ";
+                
+                current = findNode(root, currentValue);
+                if (current->left != nullptr) {
+                    queue.enqueue(current->left->data);
+                }
+                if (current->right != nullptr) {
+                    queue.enqueue(current->right->data);
+                }
+            }
+        }
+    }
+    cout << endl;
+}
+
 
 
 
