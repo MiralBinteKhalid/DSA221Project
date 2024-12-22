@@ -688,6 +688,68 @@ cout<<"viewer menu\n"
   cin.clear();
  }
 }
+void adminMenu(Graph& graph) {
+    int choice;
+    do {
+        cout << "\nAdmin Menu:\n"
+             << "1. Add Node\n"
+             << "2. Delete Node\n"
+             << "3. Add edge\n"
+             << "4. Switch to Viewer Menu\n"
+             << "5. Exit\n"
+             << "Enter choice: ";
+        
+        if (!(cin >> choice)) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input\n";
+            continue;
+        }
+
+        try {
+            switch (choice) {
+                case 1: {
+                    int nodeId;
+                    cout << "Enter node ID: ";
+                    if (cin >> nodeId) {
+                        graph.addNode(nodeId);
+                        cout << "Node added!\n";
+                    }
+                    break;
+                }
+                case 2: {
+                    int nodeId;
+                    cout << "Enter node ID to delete: ";
+                    if (cin >> nodeId) {
+                        graph.deleteNode(nodeId);
+                        cout << "Node deleted!\n";
+                    }
+                    break;
+                }
+                case 3: {
+                    int node1, node2;
+                    cout << "Enter two nodes to connect (node1 node2): ";
+                    if (cin >> node1 >> node2) {
+                        graph.addEdge(node1, node2);
+                    }
+                    break;
+                }
+                case 4:
+                    viewerMenu(graph);
+                    return;
+                case 5:
+                    cout << "Exiting admin menu\n";
+                    return;
+                default:
+                    cout << "Invalid choice\n";
+            }
+        } catch (const exception& e) {
+            cout << "Error: " << e.what() << endl;
+            continue;
+        }
+    } while (choice != 5);
+}
+
 
 
 int main(){
