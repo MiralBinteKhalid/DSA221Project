@@ -2,7 +2,7 @@
 #include<string>
 #include<limits>
 #include <stdexcept>
-#include <cstdlib> // For rand() and srand() functions
+#include <cstdlib> // For rand() & srand() functions
 #include <ctime>   // For time() in srand() 
 #include <utility> // For std pair
 #include<list>
