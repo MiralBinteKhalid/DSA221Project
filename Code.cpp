@@ -64,43 +64,7 @@ bool empty() {
         }
     }
 };
-AVLNode* insertAVL(AVLNode* node, int data) {
-    if (!node) return new AVLNode(data);
-    
-    if (data < node->data)
-        node->left = insertAVL(node->left, data);
-    else if (data > node->data)
-        node->right = insertAVL(node->right, data);
-    else {
-        node->exists = true;
-        return node;
-    }
-    
-    node->height = max(height(node->left), height(node->right)) + 1;
-    int balance = getBalance(node);
 
-    if (balance > 1 && data < node->left->data)
-        return rightRotate(node);
-    if (balance < -1 && data > node->right->data)
-        return leftRotate(node);
-    if (balance > 1 && data > node->left->data) {
-        node->left = leftRotate(node->left);
-        return rightRotate(node);
-    }
-    if (balance < -1 && data < node->right->data) {
-        node->right = rightRotate(node->right);
-        return leftRotate(node);
-    }
-
-    return node;
-
-
-
-}
-
-
-
-};
 void optimizeBandwidth(int totalBandwidth, vector<Task> &tasks) {
     // Sort tasks using the comparator
     sort(tasks.begin(), tasks.end(), compareTasks);
