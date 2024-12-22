@@ -152,6 +152,11 @@ AVLNode* findNode(AVLNode* node, int data) {
       return findNode(node->right, data); 
   
 }
+bool nodeExists(int nodeId) {
+    AVLNode* node = findNode(root, nodeId);
+    
+}
+
 
 public:
     Graph(int n) : numNodes(n), root(nullptr) {
