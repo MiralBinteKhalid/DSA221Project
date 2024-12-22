@@ -72,6 +72,7 @@ struct AVLNode {
     
     AVLNode(int d) : data(d), exists(true), left(nullptr), right(nullptr), height(1) {}
 };
+
 void optimizeBandwidth(int totalBandwidth, vector<Task> &tasks) {
     // Sort tasks using the comparator
     sort(tasks.begin(), tasks.end(), compareTasks);
