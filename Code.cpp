@@ -564,11 +564,8 @@ void viewerMenu(Graph& graph) {
                     graph.displayGraph();
                     break;
                 case 3: {
-                    int startNode;
-                    cout << "Enter start node for DFS: ";
-                    if (cin >> startNode) {
-                        graph.DFS(startNode);
-                    }
+                        graph.DFS();
+                    
                     break;
                 }
                 case 4:
@@ -579,11 +576,7 @@ void viewerMenu(Graph& graph) {
                     break;
                 }
                 case 6:{
-                    int startNode;
-                    cout << "Enter start node for BFS: ";
-                    if (cin >> startNode) {
-                        graph.BFS(startNode);
-                    }
+                        graph.BFS();
                     break;
                 }
                 case 7:
