@@ -237,7 +237,18 @@ void mergeSort(int array[], int left, int right) {
     }
 }
 
-
+void SortNodes() {
+    cout << "Nodes before sorting:\n";
+    for (int i = 0; i < numNodes; i++) {
+        cout << SortMatrix[i] << " ";
+    }
+    mergeSort(SortMatrix, 0, numNodes - 1);
+    cout << "\nNodes after sorting:\n";
+    for (int i = 0; i < numNodes; i++) {
+        cout << SortMatrix[i] << " ";
+    }
+    cout << endl;
+}
 
 
 struct node
