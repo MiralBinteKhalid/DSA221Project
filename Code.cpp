@@ -78,7 +78,7 @@ struct AVLNode {
 };
 
 
-//Main class showing all functionalities
+//Graph class showing all functionalities
 class Graph {
     public:
      int** adjacencyMatrix;//public so that it can be displayed in bandwidth
@@ -247,7 +247,6 @@ void SortNodes() {
             delete[] adjacencyMatrix[i];
         }
         delete[] adjacencyMatrix;
-        // Clean up AVL tree (implement recursive deletion)
         delete[] SortMatrix;
         delete[] adj;
     }
@@ -431,6 +430,21 @@ void BFS(int startNode) {
     }
     cout << endl;
 }
+     void displayGraph() {
+        cout << "\nCurrent Graph Structure:\n";
+        for (int i = 0; i < numNodes; i++) {
+            if (nodeExists(i)) {
+                cout << "Node " << i << " connected to: ";
+                for (int j = 0; j < numNodes; j++) {
+                    if (i != j && adjacencyMatrix[i][j] > 0) {
+                        cout << j << "(" << adjacencyMatrix[i][j] << ") ";
+                      
+                    }
+                }
+                cout << endl;
+            }
+        }
+    }
 
 };
 
