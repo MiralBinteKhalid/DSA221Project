@@ -177,8 +177,10 @@ void deleteNode(int nodeId) {
             }
         }
     }
-    public:
 
+
+
+    public:
     void DFS(int startNode) {
         if (!nodeExists(startNode)) {
             throw invalid_argument("Start node does not exist");
