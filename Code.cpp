@@ -131,7 +131,15 @@ public:
         delete[] SortMatrix;
         delete[] adj;
     }
-
+   void addNode(int nodeId) {
+        if (nodeId < 0 || nodeId >= numNodes) {
+            throw invalid_argument("Node ID out of range");
+            
+        }
+        SortMatrix[i]=nodeId;
+        root = insertAVL(root, nodeId);
+        i++;
+    }
 void optimizeBandwidth(int totalBandwidth, vector<Task> &tasks) {
     // Sort tasks using the comparator
     sort(tasks.begin(), tasks.end(), compareTasks);
