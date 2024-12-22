@@ -165,6 +165,12 @@ bool nodeExists(int nodeId) {
  void DFSUtil(int node, bool visited[]) {
       visited[node] = true;
         cout << node << " ";
+ for (int i = 0; i < numNodes; i++) {
+            if (adjacencyMatrix[node][i] && !visited[i] && nodeExists(i)) {
+                DFSUtil(i, visited);
+            }
+        }
+    }
 
 public:
 //constructor
