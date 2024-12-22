@@ -248,6 +248,17 @@ pair<int,int> findBestBandwidth(){
     }
 }   
 
+//To check if it is a graph or avl tree 
+bool hasEdges() {
+    for (int i = 0; i < numNodes; i++) {
+        for (int j = 0; j < numNodes; j++) {
+            if (adjacencyMatrix[i][j] > 0) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
 
 
