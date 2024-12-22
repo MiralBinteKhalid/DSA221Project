@@ -14,6 +14,16 @@ struct AVLNode {
     
     AVLNode(int d) : data(d), exists(true), left(nullptr), right(nullptr), height(1) {}
 };
+class graph{
+AVLNode* root;
+int height(AVLNode* node) {
+    return node ? node->height : 0;
+}
+
+
+}
+
+};
 void optimizeBandwidth(int totalBandwidth, vector<Task> &tasks) {
     // Sort tasks using the comparator
     sort(tasks.begin(), tasks.end(), compareTasks);
