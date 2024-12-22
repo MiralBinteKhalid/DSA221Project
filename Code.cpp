@@ -43,7 +43,20 @@ AVLNode* leftRotate(AVLNode* x) {
 }
 
 AVLNode* insertAVL(AVLNode* node, int data) {
+    if (!node) return new AVLNode(data);
+    
+    if (data < node->data)
+        node->left = insertAVL(node->left, data);
+    else if (data > node->data)
+        node->right = insertAVL(node->right, data);
+    else {
+        node->exists = true;
+        return node;
+    }
 
+
+
+}
 
 
 
