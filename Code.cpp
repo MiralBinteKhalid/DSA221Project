@@ -72,6 +72,16 @@ struct AVLNode {
     
     AVLNode(int d) : data(d), exists(true), left(nullptr), right(nullptr), height(1) {}
 };
+class Graph {
+    public:
+     int** adjacencyMatrix;//public so that it can be displayed in bandwidth
+private:
+    int numNodes;
+    int* SortMatrix;
+    int i;
+    AVLNode* root;
+    list<int>* adj;
+    
 
 void optimizeBandwidth(int totalBandwidth, vector<Task> &tasks) {
     // Sort tasks using the comparator
