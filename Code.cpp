@@ -54,7 +54,16 @@ public:
  bool isEmpty() {
         return front == nullptr;
     }
-
+bool empty() {
+    return isEmpty();
+}
+   
+    ~Queue() {
+        while (!isEmpty()) {
+            dequeue();
+        }
+    }
+};
 AVLNode* insertAVL(AVLNode* node, int data) {
     if (!node) return new AVLNode(data);
     
