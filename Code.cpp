@@ -19,6 +19,10 @@ AVLNode* root;
 int height(AVLNode* node) {
     return node ? node->height : 0;
 }
+int getBalance(AVLNode* node) {
+    return node ? height(node->left) - height(node->right) : 0;
+}
+
 
 
 }
