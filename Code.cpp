@@ -291,14 +291,6 @@ void SortNodes() {
         }
     }
 
-       
-        for (int i = 0; i < numNodes; i++) {
-            if (adjacencyMatrix[node][i] && !visited[i] && nodeExists(i)) {
-                DFSUtil(i, visited);
-            }
-        }
-    }
-
     void DFS(int startNode) {
         if (!nodeExists(startNode)) {
             throw invalid_argument("Start node does not exist");
