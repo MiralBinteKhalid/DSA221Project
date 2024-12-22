@@ -137,7 +137,12 @@ AVLNode* insertAVL(AVLNode* node, int data) {
         node->left = leftRotate(node->left);
         return rightRotate(node);
     }
-   /////////
+     if (balance < -1 && data < node->right->data) {
+        node->right = rightRotate(node->right);
+        return leftRotate(node);
+    }
+
+    return node;
     
 }
 
