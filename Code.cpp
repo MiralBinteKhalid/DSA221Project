@@ -233,8 +233,8 @@ void SortNodes() {
         cout << SortMatrix[i] << " ";
     }
      mergeSort(SortMatrix, 0, numNodes - 1);
-
-   ///////
+     cout << "\nNodes after sorting:\n";
+    /////////
    
 }
 
